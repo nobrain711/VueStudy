@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue.js 애완동물 샵</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1 v-text="sitename"></h1>
+      </header>
+      <main>
+        <div class="row product">
+          <div class="col">
+            <figure>
+              <img v-bind:src="product.image" />
+            </figure>
+          </div>
+          <div class="col col-expand">
+            <h1 v-text="product.title"></h1>
+            <!-- vue에서 v-text로 바인딩 시 html태그가 있으면 문자로 출력함 -->
+            <p v-html="product.description"></p>
+            <p class="price">{{product.price | formatPrice}}</p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../js/chapter02.js"></script>
+  </body>
+</html>
